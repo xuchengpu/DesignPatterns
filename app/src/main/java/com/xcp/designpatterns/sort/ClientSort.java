@@ -5,7 +5,7 @@ package com.xcp.designpatterns.sort;
  * qq:1550540124
  * 热爱生活每一天！
  */
-public class Client {
+public class ClientSort {
     public static void main(String[] args) {
         int[] arr = new int[8000000];
         for (int i = 0; i < arr.length; i++) {
@@ -22,7 +22,7 @@ public class Client {
 //        bucketSort(arr);
         long after = System.currentTimeMillis();
 //        System.out.println(Arrays.toString(arr));
-        System.out.println("排序耗时:" + (after - before) / 1000 + "秒");
+        System.out.println("排序耗时:" + (after - before) + " ms");
     }
 
     /**
