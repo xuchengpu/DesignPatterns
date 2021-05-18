@@ -80,6 +80,7 @@ public abstract class BaseActivity<K,T extends BasePresenter<K>> extends AppComp
         }
         return super.onTouchEvent(event);
     }
+
     /*
      * 打开软键盘
      * */

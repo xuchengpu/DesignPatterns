@@ -1,5 +1,9 @@
 package com.xcp.designpatterns.sort;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by 许成谱 on 2019/7/1 15:34.
  * qq:1550540124
@@ -7,26 +11,64 @@ package com.xcp.designpatterns.sort;
  */
 public class ClientSort {
     public static void main(String[] args) {
-        int[] arr = new int[8000000];
+        int[] arr = new int[10];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * 10000000);
+            arr[i] = (int) (Math.random() * 10);
         }
-//        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));
         long before = System.currentTimeMillis();
 //        bubbleSort(arr);
 //        selectSort(arr);
 //        insertSort(arr);
-        shellSort(arr);
+//        shellSort(arr);
 //        quickSort(arr, 0, arr.length - 1);
+        quickSort2(arr, 0, arr.length - 1);
 //        mergeSort(arr, 0, arr.length - 1, new int[arr.length]);
 //        bucketSort(arr);
         long after = System.currentTimeMillis();
-//        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));
         System.out.println("排序耗时:" + (after - before) + " ms");
+//        isPalindrome(new ListNode(0, new ListNode(0, null)));
+//        System.out.println(isHappy(19));
+    }
+    private static void quickSort2(int[] arr,int left,int right){
+
+        if(left>right){
+            return;
+        }
+        int i=left;int j=right;
+        int base=arr[left];
+        int temp;
+        //满足条件就要一直比较下去
+        while(left<right){
+            //先挪右边
+            while (arr[right]>=base&&left<right){
+                right--;
+            }
+            while (arr[left]<=base&&left<right){
+                left++;
+            }
+            //满足条件就交换
+            if(left<right){
+                temp=arr[left];
+                arr[left]=arr[right];
+                arr[right]=temp;
+            }
+
+        }
+        //归位基数
+        arr[i]=arr[left];
+        arr[left]=base;
+        //递归
+        quickSort2(arr,i,left-1);
+        quickSort2(arr,left+1,j);
+
     }
 
     /**
      * 冒泡排序
+     *
+     * 核心思想：不断的把最大的往后边挪，外层代表轮数，内层代表每轮需要挪动的次数
      *
      * @param arr
      */
@@ -50,6 +92,59 @@ public class ClientSort {
         }
     }
 
+    public static boolean isPalindrome(ListNode head) {
+        if (head == null)
+            return true;
+        ListNode pre = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode temp=new ListNode(curr.val,pre) ;
+            pre=temp;
+            curr=curr.next;
+        }
+        while (pre != null && head != null) {
+            if (pre.val != head.val) {
+                return false;
+            }
+            pre = pre.next;
+            head = head.next;
+        }
+        if (pre == null && head == null) {
+            return true;
+        }
+        return false;
+    }
+
+    static class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) {
+            val = x;
+        }
+        ListNode(int x, ListNode next) {
+            val = x;
+            this.next = next;
+        }
+    }
+
+    public static boolean isHappy(int n) {
+        List<Integer> list = new ArrayList();
+        while (n / 10 > 0) {
+            list.add(n % 10);
+            n = n / 10;
+        }
+        list.add(n);
+        int sum = 0;
+        for (int i = 0; i < list.size(); i++) {
+            sum += Math.pow(list.get(i), 2);
+        }
+        if (sum == 1) {
+            return true;
+        } else {
+            return isHappy(sum);
+        }
+    }
+
     /**
      * 选择排序
      *
@@ -70,7 +165,6 @@ public class ClientSort {
                 arr[index] = arr[i];
                 arr[i] = min;
             }
-
         }
     }
 
