@@ -31,43 +31,46 @@ public class ClientSort {
 //        isPalindrome(new ListNode(0, new ListNode(0, null)));
 //        System.out.println(isHappy(19));
     }
-    private static void quickSort2(int[] arr,int left,int right){
 
-        if(left>right){
+    //好理解一点，每一轮排序都是基准点归位的思想
+    private static void quickSort2(int[] arr, int left, int right) {
+
+        if (left > right) {
             return;
         }
-        int i=left;int j=right;
-        int base=arr[left];
+        int i = left;
+        int j = right;
+        int base = arr[left];
         int temp;
         //满足条件就要一直比较下去
-        while(left<right){
+        while (left < right) {
             //先挪右边
-            while (arr[right]>=base&&left<right){
+            while (arr[right] >= base && left < right) {
                 right--;
             }
-            while (arr[left]<=base&&left<right){
+            while (arr[left] <= base && left < right) {
                 left++;
             }
             //满足条件就交换
-            if(left<right){
-                temp=arr[left];
-                arr[left]=arr[right];
-                arr[right]=temp;
+            if (left < right) {
+                temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
             }
 
         }
         //归位基数
-        arr[i]=arr[left];
-        arr[left]=base;
+        arr[i] = arr[left];
+        arr[left] = base;
         //递归
-        quickSort2(arr,i,left-1);
-        quickSort2(arr,left+1,j);
+        quickSort2(arr, i, left - 1);
+        quickSort2(arr, left + 1, j);
 
     }
 
     /**
      * 冒泡排序
-     *
+     * <p>
      * 核心思想：不断的把最大的往后边挪，外层代表轮数，内层代表每轮需要挪动的次数
      *
      * @param arr
@@ -75,8 +78,8 @@ public class ClientSort {
     private static void bubbleSort(int[] arr) {
         int temp = 0;
         boolean flag = false;
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - 1 - i; j++) {
+        for (int i = 0; i < arr.length - 1; i++) {//轮数
+            for (int j = 0; j < arr.length - 1 - i; j++) {//每轮次数
                 if (arr[j] > arr[j + 1]) {
                     flag = true;
                     temp = arr[j + 1];
@@ -98,9 +101,9 @@ public class ClientSort {
         ListNode pre = null;
         ListNode curr = head;
         while (curr != null) {
-            ListNode temp=new ListNode(curr.val,pre) ;
-            pre=temp;
-            curr=curr.next;
+            ListNode temp = new ListNode(curr.val, pre);
+            pre = temp;
+            curr = curr.next;
         }
         while (pre != null && head != null) {
             if (pre.val != head.val) {
@@ -118,9 +121,11 @@ public class ClientSort {
     static class ListNode {
         int val;
         ListNode next;
+
         ListNode(int x) {
             val = x;
         }
+
         ListNode(int x, ListNode next) {
             val = x;
             this.next = next;
