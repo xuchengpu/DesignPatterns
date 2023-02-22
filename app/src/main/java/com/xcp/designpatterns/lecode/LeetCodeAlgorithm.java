@@ -1,4 +1,4 @@
-package com.xcp.designpatterns.algorithm;
+package com.xcp.designpatterns.lecode;
 
 /**
  * Created by 许成谱 on 2023/2/22 14:08.
