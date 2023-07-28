@@ -1,1 +1,1 @@
-include ':app', ':AopDemo'
+include ':app'

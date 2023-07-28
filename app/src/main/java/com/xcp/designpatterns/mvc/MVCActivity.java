@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.xcp.designpatterns.R;
+import com.xcp.designpatterns.R2;
 import com.xcp.designpatterns.base.BaseActivity;
 import com.xcp.designpatterns.mvp.BasePresenter;
 
@@ -19,11 +20,11 @@ import butterknife.OnClick;
  */
 public class MVCActivity extends BaseActivity implements Model.onStateChangedListener {
 
-    @BindView(R.id.iv_mvc)
+    @BindView(R2.id.iv_mvc)
     ImageView ivMvc;
-    @BindView(R.id.btn_load)
+    @BindView(R2.id.btn_load)
     Button btnLoad;
-    @BindView(R.id.btn_clear)
+    @BindView(R2.id.btn_clear)
     Button btnClear;
     private Model mModel;
 

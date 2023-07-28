@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.xcp.designpatterns.R;
+import com.xcp.designpatterns.R2;
 import com.xcp.designpatterns.base.BaseActivity;
 import com.xcp.designpatterns.mvp.BasePresenter;
 import com.xcp.designpatterns.principle.openclose.DiskCache;
@@ -15,7 +16,7 @@ import butterknife.BindView;
 
 public class PrincipleActivity extends BaseActivity {
 
-    @BindView(R.id.iv_principle)
+    @BindView(R2.id.iv_principle)
     ImageView ivPrinciple;
     private String url="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540213554705&di=8027086a3a638c20e8df937171194e7c&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201409%2F02%2F20140902073153_tSmie.jpeg";
 

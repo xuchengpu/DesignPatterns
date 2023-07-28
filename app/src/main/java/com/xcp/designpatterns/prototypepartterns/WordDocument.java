@@ -42,32 +42,34 @@ public class WordDocument implements Cloneable {
      * 深度复制
      * @return
      */
-    @Override
-    protected WordDocument clone() {
-        try {
-            WordDocument document = (WordDocument) super.clone();
-            document.mText = mText;
-            document.images = (ArrayList<String>) images.clone();
-            return document;
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
+//    @Override
+//    protected WordDocument clone() {
+//        try {
+//            WordDocument document = (WordDocument) super.clone();
+//            document.mText = mText;
+//            document.images = (ArrayList<String>) images.clone();
+//            return document;
+//        } catch (CloneNotSupportedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return null;
+//    }
+    /*
+     */
 
-        return null;
-    }
-/*
-    */
-/**
+    /**
      * 浅度复制
+     *
      * @return
-     *//*
+     */
 
     @Override
     protected WordDocument clone() {
         try {
             WordDocument document = (WordDocument) super.clone();
-            document.mText = mText;
-            document.images = images;
+//            document.mText = mText;
+//            document.images = images;
             return document;
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
@@ -75,7 +77,7 @@ public class WordDocument implements Cloneable {
 
         return null;
     }
-*/
+
 
     /**
      * 展示文件内容

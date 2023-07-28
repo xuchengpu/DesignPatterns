@@ -1,9 +1,10 @@
 package com.xcp.designpatterns.mvvm;
 
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
 
-import com.android.databinding.library.baseAdapters.BR;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+
+import com.xcp.designpatterns.BR;
 
 /**
  * Created by 许成谱 on 2018/10/30 14:33.
@@ -12,7 +13,7 @@ import com.android.databinding.library.baseAdapters.BR;
  * model层 ：与MVC、MVP一样，主要封装数据存储或操作的一些逻辑，与两者不同的是，model会提供一系列的实体类用作与UI进行绑定，viewmodel
  * 会在修改这些数据后将数据变化告诉view层并使UI刷新
  */
-public class UserInfo extends BaseObservable{
+public class UserInfo extends BaseObservable {
     public String mUser;
     public String mPassword;
 

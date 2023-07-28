@@ -13,13 +13,13 @@ public class Client {
         originDoc.addImage("image2");
         originDoc.addImage("image3");
         originDoc.show();
-
+        System.out.println("=================================");
         WordDocument clone = originDoc.clone();
         clone.show();
         clone.setmText("文档二");
         clone.addImage("新添加的");
         clone.show();
-
+        System.out.println("=================================");
         originDoc.show();
     }
 }

@@ -1,12 +1,14 @@
 package com.xcp.designpatterns.mvp;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.xcp.designpatterns.R;
+import com.xcp.designpatterns.R2;
 import com.xcp.designpatterns.base.BaseActivity;
 import com.xcp.designpatterns.utils.recycleview.BaseAdapter;
 import com.xcp.designpatterns.utils.recycleview.WrapRecycleview;
@@ -21,9 +23,9 @@ import butterknife.BindView;
  */
 public class MVPActivity extends BaseActivity<ArticleViewInterface, ArticlePresenter> implements ArticleViewInterface {
 
-    @BindView(R.id.progressBar)
+    @BindView(R2.id.progressBar)
     ProgressBar progressBar;
-    @BindView(R.id.recycleview)
+    @BindView(R2.id.recycleview)
     WrapRecycleview recycleview;
     private List<String> datas;
     private BaseAdapter<String> articleAdapter;

@@ -2,9 +2,10 @@ package com.xcp.designpatterns;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.xcp.designpatterns.activity.PrincipleActivity;
 import com.xcp.designpatterns.adapter.ChapterAdapter;
@@ -22,7 +23,7 @@ import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
 
-    @BindView(R.id.recycleview)
+    @BindView(R2.id.recycleview)
     RecyclerView recyclerView;
     private List<String> chapters;
     private ChapterAdapter chapterAdapter;

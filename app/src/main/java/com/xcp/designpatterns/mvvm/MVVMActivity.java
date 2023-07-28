@@ -1,9 +1,10 @@
 package com.xcp.designpatterns.mvvm;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.xcp.designpatterns.R;
 import com.xcp.designpatterns.databinding.ActivityMvvmBinding;

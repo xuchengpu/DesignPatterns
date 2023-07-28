@@ -1,8 +1,8 @@
 package com.xcp.designpatterns;
 
-import org.junit.Test;
+import static com.xcp.designpatterns.lecode.LeetCodeAlgorithm.searchRange;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -12,6 +12,8 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        int[] nums=new int[]{5,7,7,8,8,10};
+        searchRange(nums,8);
+//        assertEquals(4, 2 + 2);
     }
 }

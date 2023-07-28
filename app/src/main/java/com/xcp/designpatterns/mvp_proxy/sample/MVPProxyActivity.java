@@ -11,12 +11,8 @@ import com.xcp.designpatterns.mvp_proxy.base.BaseActivity;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class MVPProxyActivity extends BaseActivity implements WXArticleContract.IWXArticleV<List<WXArticlesBean>> {
 
-    @BindView(R.id.tv_response)
     TextView tvResponse;
     @Inject
     private IWXArticlesPresenter presenter;
@@ -30,7 +26,7 @@ public class MVPProxyActivity extends BaseActivity implements WXArticleContract.
 
     @Override
     protected void initView() {
-        ButterKnife.bind(this);
+        tvResponse=findViewById(R.id.tv_response);
     }
 
     @Override
